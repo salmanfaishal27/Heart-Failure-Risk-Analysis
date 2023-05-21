@@ -6,16 +6,26 @@ import json
 
 # Load All Files
 
-with open('model_xgb.pkl', 'rb') as file_model:
-  model_xgb = pickle.load(file_model)
+try:
+    with open('model_xgb.pkl', 'rb') as file_model:
+        model_xgb = pickle.load(file_model)
+except FileNotFoundError:
+    st.error("Model file not found. Please make sure 'model_xgb.pkl' exists in the correct directory.")
 
-with open('model_scaler.pkl', 'rb') as file_scaler:
-  model_scaler = pickle.load(file_scaler)
+try:
+    with open('model_scaler.pkl', 'rb') as file_scaler:
+        model_scaler = pickle.load(file_scaler)
+except FileNotFoundError:
+    st.error("Scaler file not found. Please make sure 'model_scaler.pkl' exists in the correct directory.")
 
-with open('data.txt', 'r') as file_data:
-  data = json.load(file_data)
+try:
+    with open('data.txt', 'r') as file_data:
+        data = json.load(file_data)
+except FileNotFoundError:
+    st.error("Data file not found. Please make sure 'data.txt' exists in the correct directory.")
 
-  st.title('Heart failure prediction')
+st.title('Heart failure prediction')
+
 
 def run():
     # Membuat form
