@@ -6,23 +6,28 @@ import json
 
 # Load All Files
 
+
+model_xgb_path = 'model_xgb.pkl'
+model_scaler_path = 'model_scaler.pkl'
+data_file_path = 'data.txt'
+
 try:
-    with open('model_xgb.pkl', 'rb') as file_model:
+    with open(model_xgb_path, 'rb') as file_model:
         model_xgb = pickle.load(file_model)
 except FileNotFoundError:
-    st.error("Model file not found. Please make sure 'model_xgb.pkl' exists in the correct directory.")
+    st.error("Model file not found.")
 
 try:
-    with open('model_scaler.pkl', 'rb') as file_scaler:
+    with open(model_scaler_path, 'rb') as file_scaler:
         model_scaler = pickle.load(file_scaler)
 except FileNotFoundError:
-    st.error("Scaler file not found. Please make sure 'model_scaler.pkl' exists in the correct directory.")
+    st.error("Scaler file not found.")
 
 try:
-    with open('data.txt', 'r') as file_data:
+    with open(data_file_path, 'r') as file_data:
         data = json.load(file_data)
 except FileNotFoundError:
-    st.error("Data file not found. Please make sure 'data.txt' exists in the correct directory.")
+    st.error("Data file not found.")
 
 st.title('Heart failure prediction')
 
