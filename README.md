@@ -6,7 +6,7 @@
 
 Deployment terdapat pada link dibawah ini:
 
-[![Deployment]](https://huggingface.co/spaces/salmanfaishal27/Death-Event-Prediction)
+[Deployment](https://huggingface.co/spaces/salmanfaishal27/Death-Event-Prediction)
 
 
 ## Dataset
