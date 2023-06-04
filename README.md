@@ -1,6 +1,4 @@
-# Heart Failure
-
-Heart-Failure-Risk-Analysis
+# Heart-Failure-Risk-Analysis
 
 ---
 
